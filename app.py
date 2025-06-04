@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from datetime import datetime
 
 app = Flask(__name__)
@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Store messages in memory
 message_history = []
 
-@app.route('/api', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def handle_request():
     if request.method == 'POST':
         # Get the request data
